@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "descricao": "comprar",
+        "status": "pendente",
+        "createdAt": "2026-06-23 16:01:39.081996",
+        "updatedAt": "2026-06-23 16:01:39.081996"
+    },
+    {
+        "id": 2,
+        "descricao": "comprar",
+        "status": "pendente",
+        "createdAt": "2026-06-23 16:01:40.386809",
+        "updatedAt": "2026-06-23 16:01:40.386809"
+    }
+]
