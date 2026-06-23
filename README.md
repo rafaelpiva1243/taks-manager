@@ -44,9 +44,9 @@ cd taks-manager
 
 3. Execute o script passando os argumentos desejados. Exemplo para atualizar uma tarefa:
 
-
-```python app.py --update 1 "Nova descrição da tarefa"```
-
+```bash
+python app.py --update 1 "Nova descrição da tarefa"
+```
 
 📈 Próximos Passos (Roadmap)
 [x] Implementar atualização de descrição de tarefas.
