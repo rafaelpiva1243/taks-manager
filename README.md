@@ -2,7 +2,7 @@
  
 # CLI Task Manager 📝
 
-Um gerenciador de tarefas via linha de comando (CLI) desenvolvido em Python. Este projeto prático faz parte do meu aprendizado e desenvolvimento no curso técnico de Desenvolvimento de Sistemas do SENAI, com foco em estruturação de backend, manipulação de arquivos e lógica de programação.
+Um gerenciador de tarefas via linha de comando (CLI) desenvolvido em Python. Este projeto prático faz parte do meu aprendizado e desenvolvimento das minhas habilidades de programação, com foco em estruturação de backend, manipulação de arquivos e lógica de programação.
 
 A aplicação permite que você crie, atualize e gerencie suas tarefas diárias diretamente pelo terminal do sistema operacional, armazenando os dados de forma persistente em um arquivo JSON.
 
