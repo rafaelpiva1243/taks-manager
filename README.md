@@ -29,16 +29,18 @@ taks-manager/
 │   └── tarefas.json     # Arquivo de armazenamento de dados (simulando um banco de dados)
 ├── .gitignore           # Arquivos ignorados pelo Git
 └── README.md            # Documentação do projeto
+```
 
 ⚙️ Como Executar
 1. Clone este repositório para a sua máquina:
-```
+
+```bash
 git clone [https://github.com/rafaelpiva1243/taks-manager.git](https://github.com/rafaelpiva1243/taks-manager.git)
 ```
 
 2.Acesse a pasta do projeto:
 
-```
+```bash
 cd taks-manager
 ```
 
