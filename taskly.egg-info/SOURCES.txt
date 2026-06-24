@@ -1,0 +1,10 @@
+README.md
+app.py
+pyproject.toml
+controllers/tarefa_controller.py
+models/tarefa.py
+taskly.egg-info/PKG-INFO
+taskly.egg-info/SOURCES.txt
+taskly.egg-info/dependency_links.txt
+taskly.egg-info/entry_points.txt
+taskly.egg-info/top_level.txt
