@@ -1,7 +1,8 @@
 # task-manager 📝
 Um gerenciador de tarefas via linha de comando (CLI) desenvolvido em Python. Este projeto faz parte do meu aprendizado e desenvolvimento de habilidades de programação, com foco em estruturação de backend, manipulação de arquivos e lógica de programação.
 A aplicação permite criar, listar e atualizar tarefas diretamente pelo terminal, armazenando os dados de forma persistente em um arquivo JSON na home do usuário.
-🚀 Funcionalidades
+
+# 🚀 Funcionalidades
 
 Adicionar tarefas via linha de comando
 Listar todas as tarefas armazenadas
@@ -10,7 +11,7 @@ Persistência em JSON usando apenas bibliotecas nativas do Python
 Instalação global via pip install . — sem precisar chamar python app.py
 Armazenamento automático em ~/.task-manager/tarefas.json, funcionando em qualquer sistema operacional
 
-🛠️ Tecnologias Utilizadas
+# 🛠️ Tecnologias Utilizadas
 
 Python 3.x
 Bibliotecas nativas: json, os, argparse
@@ -28,7 +29,7 @@ taks-manager/
 └── README.md
 ```
 
-⚙️ Como Instalar e Usar
+# ⚙️ Como Instalar e Usar
 
 1. Clone o repositório:
 
@@ -65,7 +66,7 @@ task-manager --update 1 "Nova descrição"
 
 Os dados são salvos automaticamente em ~/.task-manager/tarefas.json.
 
-📈 Roadmap
+# 📈 Roadmap
 
  Manipulação de dados em JSON
  Interface via linha de comando com argparse
