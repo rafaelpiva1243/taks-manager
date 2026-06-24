@@ -6,7 +6,7 @@ class Tarefa_controller(Tarefa):
 
     def __init__(self):
 
-        diretorio_dados = os.path.join(os.path.expanduser("~"), ".taskly")
+        diretorio_dados = os.path.join(os.path.expanduser("~"), ".task-manager")
         os.makedirs(diretorio_dados, exist_ok=True)
         self.CAMINHO_JSON = os.path.join(diretorio_dados, "tarefas.json")
 
