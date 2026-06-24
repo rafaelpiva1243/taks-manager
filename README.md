@@ -15,6 +15,7 @@ Armazenamento automático em ~/.task-manager/tarefas.json, funcionando em qualqu
 Python 3.x
 Bibliotecas nativas: json, os, argparse
 
+```text
 📁 Estrutura do Projeto
 taks-manager/
 ├── app.py                  # Ponto de entrada da CLI
@@ -25,6 +26,8 @@ taks-manager/
 ├── pyproject.toml          # Configuração de instalação do pacote
 ├── .gitignore
 └── README.md
+```
+
 ⚙️ Como Instalar e Usar
 
 1. Clone o repositório:
