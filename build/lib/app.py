@@ -10,6 +10,7 @@ def main():
     parser.add_argument("--add", help="Adicionar itens")
     parser.add_argument("--update", nargs=2)
     parser.add_argument("--read", help="Lista todas as tarefas", action='store_true')
+    parser.add_argument("--delete")
 
     args = parser.parse_args()
 
@@ -25,6 +26,10 @@ def main():
         controler.update(args.update, nova_descricao)
     elif args.read:
         controler.read_list()
+    elif args.delete:
+        controler.delete(args.delete)
+    else:
+        print("Comando não encontrado")
 
 
 if __name__ == "__main__":

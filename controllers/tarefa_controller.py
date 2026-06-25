@@ -18,12 +18,14 @@ class Tarefa_controller(Tarefa):
 
             new_task = Tarefa(id=self.id(dados), descricao=descricao)
             
-            dados.append(new_task.to_dic())
+            add = dados.append(new_task.to_dic())
 
             if dados:
-
                 with open(self.CAMINHO_JSON, "w", encoding="utf-8") as arquivo:
                     json.dump(dados, arquivo, indent=4, ensure_ascii=False)
+                print("Tarefa Adicionada")
+            else:
+                print("Erro ao adiconar tarefas")
 
     def read_json(self):
         existe  = os.path.exists(self.CAMINHO_JSON)
@@ -37,6 +39,7 @@ class Tarefa_controller(Tarefa):
 
                 return dados
             else:
+                print("Nada encontrado, criando um novo arquivo...")
                 with open(self.CAMINHO_JSON, "w", encoding="utf-8") as arquivo:
                     json.dump([], arquivo)
                 return dados
@@ -66,9 +69,25 @@ class Tarefa_controller(Tarefa):
                 else:
                     with open(self.CAMINHO_JSON, "w", encoding="utf-8") as arquivo:
                         json.dump(dados, arquivo, indent=4, ensure_ascii=False)
+                    print("Dados atualizados!")   
+            else:
+                print("Nenhum dado encontrado")
     
     def read_list(self):
         dados = self.read_json()
+        if dados:
+            for dado in dados:
+                print(dado)
+        else:
+            print("Sua lista esta vazia")
 
-        for dado in dados:
-            print(dado)
+    def delete(self, id):
+        dados = self.read_json()
+
+        if dados:
+            for dado in dados:
+                if str(id).strip() == str(dado["id"]).strip():
+                    dados.remove(dado)
+                    with open(self.CAMINHO_JSON, "w", encoding="utf-8") as arquivo:
+                        json.dump(dados, arquivo, indent=4, ensure_ascii=False)
+
