@@ -32,6 +32,7 @@ class Tarefa():
     def to_dic(self):
         return {
             "id": self.id,
+            "status": self.status,
             "description": self.descricao,
             "createdAt": self.createdAt,
             "updatedAt": self.updatedAt

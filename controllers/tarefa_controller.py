@@ -24,6 +24,7 @@ class Tarefa_controller(Tarefa):
                 with open(self.CAMINHO_JSON, "w", encoding="utf-8") as arquivo:
                     json.dump(dados, arquivo, indent=4, ensure_ascii=False)
                 print("Tarefa Adicionada")
+                print(new_task.to_dic())
             else:
                 print("Erro ao adiconar tarefas")
 
@@ -81,6 +82,17 @@ class Tarefa_controller(Tarefa):
         else:
             print("Sua lista esta vazia")
 
+    def read_id(self, id):
+        dados = self.read_json()
+        if dados: 
+            for data in dados:
+                if str(id).strip() == str(data['id']).strip():
+                    print(data)
+                else:
+                    print(f"Nada incontrado como o id: {id}")
+        else:
+            print("Lista vazia")
+
     def delete(self, id):
         dados = self.read_json()
 
@@ -91,3 +103,25 @@ class Tarefa_controller(Tarefa):
                     with open(self.CAMINHO_JSON, "w", encoding="utf-8") as arquivo:
                         json.dump(dados, arquivo, indent=4, ensure_ascii=False)
 
+    def complet(self, complet):
+        dados = self.read_json()
+        tarefa_encontrada = False
+
+        if dados:
+
+            for dado in dados:
+                if str(complet[0]).strip() == str(dado["id"]).strip():
+                    tarefa_encontrada = True
+                    dado["status"]  = "complet"
+
+            if not tarefa_encontrada:
+                print("Nada encontrato")
+            else:
+                with open(self.CAMINHO_JSON, "w", encoding="utf-8") as arquivo:
+                    json.dump(dados, arquivo, indent=4, ensure_ascii=False)
+                print("Dados atualizados!")
+                for dado in dados:
+                    if str(complet[0]).strip() == str(dado["id"]).strip():
+                        print(dado)
+        else:
+            print("Nenhum dado encontrado")

@@ -81,6 +81,17 @@ class Tarefa_controller(Tarefa):
         else:
             print("Sua lista esta vazia")
 
+    def read_id(self, id):
+        dados = self.read_json()
+        if dados: 
+            for data in dados:
+                if str(id).strip() == str(data['id']).strip():
+                    print(data)
+                else:
+                    print(f"Nada incontrado como o id: {id}")
+        else:
+            print("Lista vazia")
+
     def delete(self, id):
         dados = self.read_json()
 

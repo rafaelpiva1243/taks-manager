@@ -11,6 +11,7 @@ def main():
     parser.add_argument("--update", nargs=2)
     parser.add_argument("--read", help="Lista todas as tarefas", action='store_true')
     parser.add_argument("--delete")
+    parser.add_argument("--id", help="Lista por id")
 
     args = parser.parse_args()
 
@@ -28,6 +29,8 @@ def main():
         controler.read_list()
     elif args.delete:
         controler.delete(args.delete)
+    elif args.id:
+        controler.read_id(args.id)
     else:
         print("Comando não encontrado")
 
