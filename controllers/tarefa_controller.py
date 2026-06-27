@@ -112,7 +112,7 @@ class Tarefa_controller(Tarefa):
             for dado in dados:
                 if str(complet[0]).strip() == str(dado["id"]).strip():
                     tarefa_encontrada = True
-                    dado["status"]  = "complet"
+                    dado["status"]  = "done"
 
             if not tarefa_encontrada:
                 print("Nada encontrato")
@@ -125,3 +125,46 @@ class Tarefa_controller(Tarefa):
                         print(dado)
         else:
             print("Nenhum dado encontrado")
+
+    def progress(self, progress):
+        dados = self.read_json()
+        tarefa_encontrada = False
+
+        if dados:
+
+            for dado in dados:
+                if str(progress[0]).strip() == str(dado["id"]).strip():
+                    tarefa_encontrada = True
+                    dado["status"]  = "in progress"
+
+            if not tarefa_encontrada:
+                print("Nada encontrato")
+            else:
+                with open(self.CAMINHO_JSON, "w", encoding="utf-8") as arquivo:
+                    json.dump(dados, arquivo, indent=4, ensure_ascii=False)
+                print("Dados atualizados!")
+                for dado in dados:
+                    if str(progress[0]).strip() == str(dado["id"]).strip():
+                        print(dado)
+        else:
+            print("Nenhum dado encontrado")
+
+    def read_done(self):
+        dados = self.read_json()
+        if dados: 
+            for data in dados:
+                if data['status'] == "done":
+                    print(data)
+
+        else:
+            print("Lista vazia")
+
+    def read_progress(self):
+        dados = self.read_json()
+        if dados: 
+            for data in dados:
+                if data['status'] == "in progress":
+                    print(data)
+
+        else:
+            print("Lista vazia")

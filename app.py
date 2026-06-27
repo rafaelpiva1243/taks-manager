@@ -12,7 +12,10 @@ def main():
     parser.add_argument("--read", help="Lista todas as tarefas", action='store_true')
     parser.add_argument("--delete")
     parser.add_argument("--id", help="Lista por id")
-    parser.add_argument("--complet")
+    parser.add_argument("--mark-done")
+    parser.add_argument("--mark-in-progress")
+    parser.add_argument("--read-in-progress", action='store_true')
+    parser.add_argument("--read-done", action='store_true')
 
     args = parser.parse_args()
 
@@ -32,8 +35,14 @@ def main():
         controler.delete(args.delete)
     elif args.id:
         controler.read_id(args.id)
-    elif args.complet:
-        controler.complet(args.complet)
+    elif args.mark_done:
+        controler.complet(args.mark_done)
+    elif args.mark_in_progress:
+        controler.progress(args.mark_in_progress)
+    elif args.read_in_progress:
+        controler.read_progress()
+    elif args.read_done:
+        controler.read_done()
     else:
         print("Comando não encontrado")
 
